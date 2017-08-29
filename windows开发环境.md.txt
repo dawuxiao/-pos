@@ -1,0 +1,54 @@
+                                         windows开发环境
+     1下载node.js
+       
+      官网 ：nodejs.org/en 下载  v6.11.2 LTS
+      在Windows上安装时务必选择全部组件，包括勾选Add to Path。
+      安装完成后，在Windows环境下，请打开命令提示符，然后输入node -v，如果安装正常，你应该看到v7.6.0这样的输出：
+  终端输入：
+          C:\Users\IEUser>node -v
+    显示：
+          v7.6.0     
+    恭喜你成功安装了node.js
+    
+   2 npm  其实是Node.js的包管理工具（package manager）。
+        其实npm已经在Node.js安装的时候顺带装好了。我们在命令提示符或者终端输入npm -v，应该看到类似的输出：
+         
+         C:\Users\IEUser>npm  -v
+         4.1.2  .
+   
+    3  安装express;
+      
+      在你的windows上已经安装了node.js的基础上再安装express
+     
+       第一部分:安装express 
+       第一步:执行 npm install -g express-generator 
+       注:必须安装这个,不然创建express项目的时候会提示express命令没有找到
+       第二步:执行 npm install -g express
+       第三步:执行 express -V
+       注:'V'是大写的,如果express安装成功会显示版本号
+       第二部分:创建一个express项目 
+       第一步:执行 express youProjectName
+       注:youProjectName是你的项目的名称,按照自己的要求选择合适的项目名称
+       第二步 :进入你的项目:cd youProjectName
+       第三步:在你的项目的目录下执行 npm install
+       ( 注：如需用到MySQL，后面还需npm install mysql
+       第四步:启动你的项目,执行 npm start
+       第三部分:在浏览器中访问你的项目
+       打开你的浏览器,在地址栏中输入:http://127.0.0.1:3000
+       然后你会看到:express的欢迎信息 ；
+      
+    4 安装MySQL;
+            
+    1. 在浏览器里打开mysql的官网http://www.mysql.com/
+    2. 进入页面顶部的"Downloads"
+    3. 打开页面底部的“Community(GPL) Downloads”
+    4. 在页面中间的位置找到我们windows上要用的下载页面“MySQL on Windows(Installer & Tools)”
+    5. 选择第一项"MySQL Installer”
+    6. 页面底端找到下载入口“Windows (x86,
+    32-bit), MSI Installer”，点击Download按钮开始下载，共381.4M
+    注意：MSI格式是指windows的安装程序，下载后直接双击就能进入安装向导的那种，区别于对文件进行解压的安装方式；
+    7. 这个页面告诉询问你是否登录，告诉你登录之后有哪些好处，我们不登录，点击页面底部的“No thanks, just start my download.”按钮进入下载页面
+    8. 开始下载，等待下载完成（由于直接下载速度太慢，之后我用迅雷下载完成的）
+    9. 下载完成；
+    10.然后进行安装；
+    具体可参照脚本之家的一个教程：http://www.jb51.net/article/92158.htm
