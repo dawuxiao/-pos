@@ -1,0 +1,141 @@
+                                  笔记
+
+     bindtap，当用户点击该组件的时候会在该页面对应的Page中找到相应的事件处理函数
+     view这个组件就是一个视图组件。
+ 
+  WXML: 
+     WXML（WeiXin Markup Language）是框架设计的一套标签语言，结合基础组件、事件系统，
+     可以构建出页面的结构
+      
+      wxml 
+       
+       1数据绑定，2列表渲染 3条件渲染  4 模板  5 事件  6引用 
+      
+       
+      1：数据绑定使用 Mustache 语法（双大括号）将变量包起来，可以作用于：内容，组件属性
+      （需要在双引号之内） ，控制属性（需要在双引号之内），
+        
+         关键字（）：true：boolean 类型的 true，代表真值。
+                     false： boolean 类型的 false，代表假值。
+   
+      2运算（可以在 {{}} 内进行简单的运算）：
+       
+       三元运算，<view hidden="{{flag ? true : false}}"> Hidden </view>
+     
+       数学运算，
+                 <view> {{a + b}} + {{c}} + d </view>
+                 Page({
+                   data: {
+                          a: 1,
+                          b: 2,
+                          c: 3
+                         }
+                       }) 
+
+       逻辑判断 ，<view wx:if="{{length > 5}}"> </view> 
+
+       字符串运算，
+                 <view>{{"hello" + name}}</view>
+                   
+                   Page({
+                    data:{
+                         name: 'MINA'
+                            }
+                        })
+
+       数据路径运算， 
+
+                 <view>{{object.key}} {{array[0]}}</view>
+                 
+
+
+                 Page({
+                   data: {
+                      object: {
+                        key: 'Hello '
+                     },
+                    array: ['MINA']
+                   }
+                 })
+
+      3组合（也可以在 Mustache 内直接进行组合，构成新的对象或者数组）
+   
+       数组，  对象  ，
+
+     什么是事件
+        事件是视图层到逻辑层的通讯方式。
+        事件可以将用户的行为反馈到逻辑层进行处理。
+        事件可以绑定在组件上，当达到触发事件，就会执行逻辑层中对应的事件处理函数。
+        事件对象可以携带额外信息，如 id, dataset, touches。
+ 
+
+
+     WXS
+
+     WXS（WeiXin Script）是小程序的一套脚本语言，结合 WXML，可以构建出页面的结构。
+
+      页面渲染 。数据处理
+
+     WXS .又分 ，模块 。变量。 注释 。运算符。语句。数据类型。基础类库。
+
+     每个wxs模块均有一个内置的module对象。
+      
+     属性：exports:通过该属性，可以对外共享本模板的私有变量与函数。
+
+     if 语句
+       在 WXS 中，可以使用以下格式的 if 语句 ：
+     if (expression) statement ： 当 expression 为 truthy 时，执行 statement。
+       if (expression) statement1 else statement2 : 当 expression 为 truthy 时，
+     执行 statement1。 否则，执行 statement2
+       if ... else if ... else statementN 通过该句型，可以在 statement1 ~ 
+      statementN 之间选其中一个执行。 
+      WXS 语言目前共有以下几种数据类型：
+        number ： 数值
+        string ：字符串
+        boolean：布尔值
+        object：对象
+        function：函数
+        array : 数组
+        date：日期
+        regexp：正则
+
+        
+      选择器
+     目前支持的选择器有：
+
+
+     选择器               样例                   样例描述
+    
+     .class              .intro              选择所有拥有class="intro"的组件
+    
+     #id                 #firstname          选择拥有id="firstname"的组件
+    
+     element               view                选择所有view组件
+    
+     element, element    view checkbox    选择所有文档的view组件和所有的checkbox组件
+
+     ::after             view::after          在view组件后边插入内容
+
+     ::before            view::before         在view组件前边插入内容
+
+  属性类型
+
+           类型                        描述                        注解
+     
+         Boolean                      布尔值              组件写上该属性，不管该属性等于
+                                                          什么，其值都为true，只有组件上
+                                                         没有写该属性时，属性值才为false
+                                                        。如果属性值为变量，变量的值会被                                                           
+                                                                       转换为Boolean类型
+
+        Number                        数字                            1, 2.5
+
+        String                        字符串                          "string"
+
+        Array                         数组                            [ 1, "string" ]
+
+        Object                        对象                           { key: value }
+
+        EventHandler                  事件处理函数名            "handlerName"是Page中定义的事件处理函数名
+
+         Any                         任意属性     
